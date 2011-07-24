@@ -1,0 +1,8 @@
+#!/bin/sh
+MY_RUBY=$1
+curl -s https://repository-cloudbees.forge.cloudbees.com/distributions/ci-addons/rvm/install-addon | bash
+. ~/.rvmrc
+. ${rvm_path}/scripts/rvm
+rvm use $MY_RUBY
+#Optional commands you may like to use in your global installer
+gem install --conservative bundler
